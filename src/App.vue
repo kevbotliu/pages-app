@@ -1,6 +1,9 @@
 <template>
     <div id="app-body">
-        <app-sidebar :accountName="accountName"></app-sidebar>
+        <app-sidebar 
+        :accountName="accountName" 
+        :currentTime="currentTime">
+        </app-sidebar>
         <app-reminder-list></app-reminder-list>
         <app-reminder-container></app-reminder-container>
     </div>
@@ -14,7 +17,13 @@ import ReminderContainer from "./components/ReminderContainer.vue";
 export default {
     data() {
         return {
-            accountName: "Kevin Liu"
+            accountName: "Kevin Liu",
+            currentTime: "timeofDay"
+        }
+    },
+    computed: {
+        timeOfDay() {
+            return new Date().getHours();
         }
     },
     methods: {
