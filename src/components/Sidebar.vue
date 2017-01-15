@@ -3,8 +3,8 @@
 		<div id="sidebar-header">
 			<img src="../assets/logo.png" alt="logo" height="24" width="24">
 			<div class="account-name">
-				<p class="small" v-if="currentTime<12">Good morning,</p>
-				<p class="small" v-else-if="currentTime<18">Good afternoon,</p>
+				<p class="small" v-if="timeOfDay()<12">Good morning,</p>
+				<p class="small" v-else-if="timeOfDay()<18">Good afternoon,</p>
 				<p class="small" v-else>Good evening,</p>
 				{{ accountName }}
 			</div>
@@ -17,7 +17,7 @@
 export default {
 	props: {
 		accountName: String,
-		currentTime: Number
+		timeOfDay: Function
 	}
 }
 
@@ -27,7 +27,7 @@ export default {
 img {
 	background: #2c3239;
 	padding: 10px;
-	margin: 20px 10px 20px 0;
+	margin: 20px 5px 20px 0;
 	border-radius: 3px;
 }
 #sidebar {
@@ -56,13 +56,12 @@ img {
 	font-size: 1.25em;
 	font-weight: bold;
 	text-transform: uppercase;
-	margin-right: 10px;
 	font-family: 'Slabo 27px', serif;
 }
 .small {
 	color: #8c8b96;
 	font-size: 0.6em;
-	margin: 0;
+	margin: 0 0 0 5px;
 }
 #sidebar-container {
 	margin: 0;

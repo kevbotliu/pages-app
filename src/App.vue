@@ -2,7 +2,7 @@
     <div id="app-body">
         <app-sidebar 
         :accountName="accountName" 
-        :currentTime="currentTime">
+        :timeOfDay="timeOfDay">
         </app-sidebar>
         <app-reminder-list></app-reminder-list>
         <app-reminder-container></app-reminder-container>
@@ -18,16 +18,12 @@ export default {
     data() {
         return {
             accountName: "Kevin Liu",
-            currentTime: "timeofDay"
-        }
-    },
-    computed: {
-        timeOfDay() {
-            return new Date().getHours();
         }
     },
     methods: {
-
+        timeOfDay() {
+            return new Date().getHours();
+        }
     },
     components: {
         "app-sidebar": Sidebar,
