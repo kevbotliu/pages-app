@@ -1,7 +1,7 @@
 <template>
 	<div id="navbar">
 		<div id="account-header">
-			<img @click="changeAccountModalState()" src="../assets/logo.png" alt="logo" height="18" width="18">
+			<img @click="changeAccountModalState" src="../assets/logo.png" alt="logo" height="18" width="18">
 			<div class="account-name">
 				<p class="small" v-if="timeOfDay()<12">Good morning</p>
 				<p class="small" v-else-if="timeOfDay()<18">Good afternoon</p>
@@ -50,13 +50,12 @@ img {
 	padding: 10px;
 	margin: 0 10px 0 10px;
 	border-radius: 3px;
-	box-shadow: 0 1px 1px #232930;
-}
-img:focus {
-	transform: scale(1.08, 1.08);
+	box-shadow: 0 1px 1px black;
 }
 img:active {
-	background: #232930;
+	background: #262c33;
+	transform: scale(0.98, 0.98);
+	box-shadow: none;
 }
 #account-header {
 	display: flex;

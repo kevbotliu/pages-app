@@ -8,7 +8,10 @@
         <app-sidebar></app-sidebar>
         <app-document-list></app-document-list>
         <app-document-container></app-document-container>
-        <app-account-modal v-show="showingAccountModal"></app-account-modal>
+        <app-account-modal 
+        :changeAccountModalState="changeAccountModalState" 
+        v-show="showingAccountModal">
+        </app-account-modal>
     </div>
 </template>
 
