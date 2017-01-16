@@ -1,7 +1,7 @@
 <template>
 	<div id="navbar">
 		<div id="account-header">
-			<img @click="" src="../assets/logo.png" alt="logo" height="18" width="18">
+			<img @click="changeAccountModalState()" src="../assets/logo.png" alt="logo" height="18" width="18">
 			<div class="account-name">
 				<p class="small" v-if="timeOfDay()<12">Good morning</p>
 				<p class="small" v-else-if="timeOfDay()<18">Good afternoon</p>
@@ -26,8 +26,9 @@
 export default {
 	props: {
 		accountName: String,
-		timeOfDay: Function
-	}
+		timeOfDay: Function,
+		changeAccountModalState: Function
+	}	
 }
 </script>
 
@@ -49,10 +50,10 @@ img {
 	padding: 10px;
 	margin: 0 10px 0 10px;
 	border-radius: 3px;
-}
-img:hover, img:focus {
-	transform: scale(1.08, 1.08);
 	box-shadow: 0 1px 1px #232930;
+}
+img:focus {
+	transform: scale(1.08, 1.08);
 }
 img:active {
 	background: #232930;
