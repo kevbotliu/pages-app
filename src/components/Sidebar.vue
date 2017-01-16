@@ -1,5 +1,9 @@
 <template>
 	<div id="sidebar">
+		<div id="share-wrapper">
+			Share this document
+			<input>
+		</div>
 	</div>
 </template>
 
@@ -18,7 +22,7 @@ export default {
 
 #sidebar {
 	position: fixed;
-	background: #3e4651;
+	background: rgb(63, 73, 83);
 	margin-top: 60px;
 	padding: 0;
 	height: 100vh;

@@ -5,9 +5,12 @@
         :timeOfDay="timeOfDay"
         :changeAccountModalState="changeAccountModalState">
         </app-navbar>
-        <app-sidebar></app-sidebar>
-        <app-document-list></app-document-list>
-        <app-document-container></app-document-container>
+        <app-sidebar v-show="showingBar1"></app-sidebar>
+        <app-document-list v-show="showingBar2"></app-document-list>
+        <app-document-container
+        :changeSideBarState="changeSideBarState"
+        :changeListBarState="changeListBarState">
+        </app-document-container>
         <app-account-modal 
         :changeAccountModalState="changeAccountModalState" 
         v-show="showingAccountModal">
@@ -25,8 +28,10 @@ import AccountModal from "./components/AccountModal.vue";
 export default {
     data() {
         return {
-            accountName: "Kevin Liu",
-            showingAccountModal: false
+            accountName: "You",
+            showingAccountModal: false,
+            showingBar1: true,
+            showingBar2: true
         }
     },
     methods: {
@@ -36,6 +41,14 @@ export default {
         changeAccountModalState() {
             if(this.showingAccountModal) this.showingAccountModal = false;
             else this.showingAccountModal = true;
+        },
+        changeSideBarState() {
+            if(this.showingBar1) this.showingBar1 = false;
+            else this.showingBar1 = true;
+        },
+        changeListBarState() {
+            if(this.showingBar2) this.showingBar2 = false;
+            else this.showingBar2 = true;
         }
     },
     components: {

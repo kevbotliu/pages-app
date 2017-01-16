@@ -1,6 +1,9 @@
 <template>
 	<div id="document-container">
-		<statusbar></statusbar>
+		<statusbar 
+		:changeSideBarState="changeSideBarState"
+		:changeListBarState="changeListBarState">
+		</statusbar>
 	</div>
 </template>
 
@@ -8,6 +11,10 @@
 import Statusbar from "./Statusbar.vue";
 
 export default {
+	props: {
+		changeSideBarState: Function,
+		changeListBarState: Function
+	},
 	components: {
 		"statusbar": Statusbar
 	}
@@ -25,6 +32,6 @@ export default {
 	margin-left: 400px;
 	width: 100%;
 	color: #e0e2e5;
-	background: #F5F2F1;
+	background: rgb(79, 89, 99);
 }
 </style>

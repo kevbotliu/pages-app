@@ -15,6 +15,6 @@
 	margin-left: 200px;
 	width: 200px;
 	color: #e0e2e5;
-	background: #48515e;
+	background: rgb(71, 81, 91);
 }
 </style>

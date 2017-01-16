@@ -1,7 +1,7 @@
 <template>
 	<div id="navbar">
 		<div id="account-header">
-			<img @click="changeAccountModalState" src="../assets/logo.png" alt="logo" height="18" width="18">
+			<img class="nav-button" @click="changeAccountModalState" src="../assets/logo.png" alt="logo" height="18" width="18">
 			<div class="account-name">
 				<p class="small" v-if="timeOfDay()<12">Good morning</p>
 				<p class="small" v-else-if="timeOfDay()<18">Good afternoon</p>
@@ -10,7 +10,7 @@
 			</div>
 		</div>
 		<div id="document-list-header">
-			<img id="inverted" src="../assets/plus.png" height="18" width="18" alt="New">
+			<img class="nav-button" src="../assets/plus.png" height="18" width="18" alt="New">
 			<div class="pages-name">
 				<p class="small">View past edits </p>
 				Pages
@@ -41,18 +41,23 @@ export default {
 	z-index: 9999;
 	height: 60px;
 	width: 100%;
-	background: #373f48;
+	background: rgb(55, 65, 75);
 	border-bottom: 1px solid #2c3239;
 
+	user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+
 }
-img {
+.nav-button {
 	background: #2c3239;
 	padding: 10px;
 	margin: 0 10px 0 10px;
 	border-radius: 3px;
 	box-shadow: 0 1px 1px black;
 }
-img:active {
+.nav-button:active {
 	background: #262c33;
 	transform: scale(0.98, 0.98);
 	box-shadow: none;
