@@ -1,18 +1,20 @@
 <template>
     <div id="app-body">
-        <app-sidebar 
+        <app-navbar
         :accountName="accountName" 
         :timeOfDay="timeOfDay">
-        </app-sidebar>
-        <app-reminder-list></app-reminder-list>
-        <app-reminder-container></app-reminder-container>
+        </app-navbar>
+        <app-sidebar></app-sidebar>
+        <app-document-list></app-document-list>
+        <app-document-container></app-document-container>
     </div>
 </template>
 
 <script>
 import Sidebar from "./components/Sidebar.vue";
-import ReminderList from "./components/ReminderList.vue";
-import ReminderContainer from "./components/ReminderContainer.vue";
+import DocumentList from "./components/DocumentList.vue";
+import DocumentContainer from "./components/DocumentContainer.vue";
+import Navbar from "./components/Navbar.vue";
 
 export default {
     data() {
@@ -27,14 +29,16 @@ export default {
     },
     components: {
         "app-sidebar": Sidebar,
-        "app-reminder-list": ReminderList,
-        "app-reminder-container": ReminderContainer
+        "app-document-list": DocumentList,
+        "app-document-container": DocumentContainer,
+        "app-navbar": Navbar
     }
 }
 </script>
 
 <style>
 #app-body {
+    color: #e0e2e5;
     padding: 0;
     margin: 0;
     position: fixed;
