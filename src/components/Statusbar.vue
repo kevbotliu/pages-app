@@ -1,12 +1,19 @@
 <template>
 	<div id="statusbar">
-		<img class="status-button" src="../assets/logo.png" alt="logo" height="16" width="16">
-		<img class="status-button" src="../assets/plus.png" height="16" width="16" alt="New">
+		<img class="status-button" @click="changeSideBarState" src="../assets/logo.png" alt="logo" height="16" width="16">
+		<img class="status-button" @click="changeListBarState" src="../assets/plus.png" height="16" width="16" alt="New">
 	</div>
 </template>
 
 <script>
-
+export default {
+	props: {
+		showingBar1: Boolean,
+		showingBar2: Boolean,
+		changeSideBarState: Function,
+		changeListBarState: Function
+	}
+}
 </script>
 
 <style> 

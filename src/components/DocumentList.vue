@@ -10,9 +10,7 @@
 
 <style> 
 #document-list {
-	position: fixed;
 	height: 100vh;
-	margin-left: 200px;
 	width: 200px;
 	color: #e0e2e5;
 	background: rgb(71, 81, 91);

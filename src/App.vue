@@ -5,9 +5,11 @@
         :timeOfDay="timeOfDay"
         :changeAccountModalState="changeAccountModalState">
         </app-navbar>
-        <app-sidebar v-show="showingBar1"></app-sidebar>
-        <app-document-list v-show="showingBar2"></app-document-list>
+        <app-sidebar v-if="showingBar1"></app-sidebar>
+        <app-document-list v-if="showingBar2"></app-document-list>
         <app-document-container
+        :showingBar1="showingBar1"
+        :showingBar2="showingBar2"
         :changeSideBarState="changeSideBarState"
         :changeListBarState="changeListBarState">
         </app-document-container>
@@ -63,6 +65,8 @@ export default {
 
 <style>
 #app-body {
+    display: flex;
+    flex-direction: row;
     color: #e0e2e5;
     padding: 0;
     margin: 0;

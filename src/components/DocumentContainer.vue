@@ -1,6 +1,8 @@
 <template>
 	<div id="document-container">
 		<statusbar 
+		:showingBar1="showingBar1"
+		:showingBar2="showingBar2"
 		:changeSideBarState="changeSideBarState"
 		:changeListBarState="changeListBarState">
 		</statusbar>
@@ -12,6 +14,8 @@ import Statusbar from "./Statusbar.vue";
 
 export default {
 	props: {
+		showingBar1: Boolean,
+		showingBar2: Boolean,
 		changeSideBarState: Function,
 		changeListBarState: Function
 	},
@@ -24,13 +28,11 @@ export default {
 
 <style> 
 #document-container {
-	position: fixed;
 	display: flex;
 	flex-direction: column;
+	flex-grow: 1;
 	justify-content: flex-end;
 	height: 100vh;
-	margin-left: 400px;
-	width: 100%;
 	color: #e0e2e5;
 	background: rgb(79, 89, 99);
 }

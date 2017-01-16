@@ -21,7 +21,6 @@ export default {
 <style> 
 
 #sidebar {
-	position: fixed;
 	background: rgb(63, 73, 83);
 	margin-top: 60px;
 	padding: 0;
