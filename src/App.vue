@@ -6,11 +6,11 @@
         :changeAccountModalState="changeAccountModalState">
         </app-navbar>
 
-        <transition name="slide">
-            <app-sidebar v-if="showingBar1"></app-sidebar>
-        </transition>
+
+        <app-sidebar v-if="showingBar1"></app-sidebar>
         <app-document-list v-if="showingBar2"></app-document-list>
 
+        
         <app-document-container
         :showingBar1="showingBar1"
         :showingBar2="showingBar2"
@@ -22,6 +22,13 @@
         :changeAccountModalState="changeAccountModalState" 
         v-show="showingAccountModal">
         </app-account-modal>
+
+        <app-statusbar 
+        :showingBar1="showingBar1"
+        :showingBar2="showingBar2"
+        :changeSideBarState="changeSideBarState"
+        :changeListBarState="changeListBarState">
+        </app-statusbar>
     </div>
 </template>
 
@@ -31,6 +38,7 @@ import DocumentList from "./components/DocumentList.vue";
 import DocumentContainer from "./components/DocumentContainer.vue";
 import Navbar from "./components/Navbar.vue";
 import AccountModal from "./components/AccountModal.vue";
+import Statusbar from "./components/Statusbar.vue";
 
 export default {
     data() {
@@ -63,16 +71,14 @@ export default {
         "app-document-list": DocumentList,
         "app-document-container": DocumentContainer,
         "app-navbar": Navbar,
-        "app-account-modal": AccountModal
-    }
+        "app-account-modal": AccountModal,
+        "app-statusbar": Statusbar
+    },
 }
 </script>
 
 <style>
-.slide-enter-active, .slide-leave-active {
-    transition: transform 0.2s
-}
-.slide-enter, .slide-leave-to {
+.translateHide {
     transform: translateX(-200px);
 }
 #app-body {
@@ -85,5 +91,7 @@ export default {
     height: 100vh;
     width: 100%;
 }
+
+
 </style>
 

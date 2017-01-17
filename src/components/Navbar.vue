@@ -52,15 +52,16 @@ export default {
 
 }
 .nav-button {
-	background: #2c3239;
+	background: rgb(48, 58, 68);
 	padding: 10px;
 	margin: 0 10px 0 10px;
+	border: 1px solid rgb(45, 55, 65);
 	border-radius: 3px;
-	box-shadow: 0 1px 1px black;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
 }
 .nav-button:active {
-	background: #262c33;
-	transform: scale(0.98, 0.98);
+	background: rgb(38, 48, 58);
+	transform: scale(0.99, 0.99);
 	box-shadow: none;
 }
 #account-header {

@@ -1,9 +1,9 @@
 <template>
-	<transition name="slide">
-		<div id="document-list">
+
+	<div id="document-list">
 		d
-		</div>
-	</transition>
+	</div>
+
 </template>
 
 <script>
@@ -17,6 +17,6 @@
 	color: #e0e2e5;
 	background: rgb(71, 81, 91);
 	z-index: 999;
-	box-shadow: 1px 0 1px rgba(0, 0, 0, 0.35);
+	box-shadow: 1px 0 1px rgba(0, 0, 0, 0.4);
 }
 </style>

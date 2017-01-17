@@ -1,26 +1,19 @@
 <template>
 	<div id="document-container">
-		<statusbar 
-		:showingBar1="showingBar1"
-		:showingBar2="showingBar2"
-		:changeSideBarState="changeSideBarState"
-		:changeListBarState="changeListBarState">
-		</statusbar>
+		<div id="toolbar"></div>
+		<div id="document"></div>
 	</div>
 </template>
 
 <script>
-import Statusbar from "./Statusbar.vue";
-
 export default {
-	props: {
-		showingBar1: Boolean,
-		showingBar2: Boolean,
-		changeSideBarState: Function,
-		changeListBarState: Function
-	},
-	components: {
-		"statusbar": Statusbar
+	mounted() {
+		var container = document.getElementById('document');
+		var quill = new Quill("#document", {
+			modules: {
+				toolbar: "#toolbar"
+			}
+		});
 	}
 }
 
@@ -31,10 +24,28 @@ export default {
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
-	justify-content: flex-end;
-	height: 100vh;
+	align-content: center;
+	justify-content: center;
 	color: #e0e2e5;
 	background: rgb(79, 89, 99);
 	z-index: 998;
+	margin-top: 60px;
+
+}
+#toolbar {
+	height: 60px;
+	width: 50vw;
+	background: white;
+	margin-bottom: 10px;
+}
+#document {
+	color: black;
+	font-size: 14;
+	font-family: "Open Sans";
+	padding: 50px;
+	height: 100vh;
+	background: white;
+	width: 50vw;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
 }
 </style>

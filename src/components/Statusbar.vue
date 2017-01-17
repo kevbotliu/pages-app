@@ -18,26 +18,27 @@ export default {
 
 <style> 
 #statusbar {
+	position: absolute;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: flex-start; 
-	width: 100%;
+	z-index: 9999;
+	bottom: 0;
+	right: 0;
 	height: 40px;
-	background: rgb(55, 65, 75);
-	border-top: 1px solid #2c3239;
-	box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.15);
+	padding: 5px 20px 5px 5px;
+
 }
 .status-button {
-	background: #2c3239;
+	background: rgb(72, 82, 92);
 	padding: 8px;
-	margin: 0 0 0 8px;
+	margin-right: 5px;
 	border-radius: 3px;
-	box-shadow: 0 1px 1px black;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
 }
 .status-button:active {
-	background: #262c33;
-	transform: scale(0.98, 0.98);
+	background: rgb(69, 79, 89);
+	transform: scale(0.99, 0.99);
 	box-shadow: none;
 }
 </style>
