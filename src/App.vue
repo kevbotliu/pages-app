@@ -5,14 +5,19 @@
         :timeOfDay="timeOfDay"
         :changeAccountModalState="changeAccountModalState">
         </app-navbar>
-        <app-sidebar v-if="showingBar1"></app-sidebar>
+
+        <transition name="slide">
+            <app-sidebar v-if="showingBar1"></app-sidebar>
+        </transition>
         <app-document-list v-if="showingBar2"></app-document-list>
+
         <app-document-container
         :showingBar1="showingBar1"
         :showingBar2="showingBar2"
         :changeSideBarState="changeSideBarState"
         :changeListBarState="changeListBarState">
         </app-document-container>
+
         <app-account-modal 
         :changeAccountModalState="changeAccountModalState" 
         v-show="showingAccountModal">
@@ -64,6 +69,12 @@ export default {
 </script>
 
 <style>
+.slide-enter-active, .slide-leave-active {
+    transition: transform 0.2s
+}
+.slide-enter, .slide-leave-to {
+    transform: translateX(-200px);
+}
 #app-body {
     display: flex;
     flex-direction: row;

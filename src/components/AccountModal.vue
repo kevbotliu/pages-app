@@ -78,12 +78,14 @@ input[type="submit"]:active {
 
 #account-modal-wrapper{
 	position: absolute;
+	top: 0;
+	left: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	z-index: 9999;
 	height: 100vh;
-	width: 100%;
+	width: 100vw;
 	background: rgba(0, 0, 0, 0.5);
 }
 #account-modal {

@@ -35,5 +35,6 @@ export default {
 	height: 100vh;
 	color: #e0e2e5;
 	background: rgb(79, 89, 99);
+	z-index: 998;
 }
 </style>

@@ -1,10 +1,12 @@
 <template>
-	<div id="sidebar">
-		<div id="share-wrapper">
-			Share this document
-			<input>
+
+		<div id="sidebar">
+			<div id="share-wrapper">
+				Share this document
+				<input>
+			</div>
 		</div>
-	</div>
+
 </template>
 
 <script>
@@ -26,6 +28,8 @@ export default {
 	padding: 0;
 	height: 100vh;
 	width: 200px;
+	z-index: 1000;
+	box-shadow: 1px 0 1px rgba(0, 0, 0, 0.35);
 }
 
 

@@ -26,6 +26,7 @@ export default {
 	height: 40px;
 	background: rgb(55, 65, 75);
 	border-top: 1px solid #2c3239;
+	box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.15);
 }
 .status-button {
 	background: #2c3239;
