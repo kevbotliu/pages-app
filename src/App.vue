@@ -7,8 +7,8 @@
         </app-navbar>
 
 
-        <app-sidebar v-if="showingBar1"></app-sidebar>
-        <app-document-list v-if="showingBar2"></app-document-list>
+        <app-sidebar v-show="showingBar1"></app-sidebar>
+        <app-document-list v-show="showingBar2"></app-document-list>
 
         
         <app-document-container
@@ -88,6 +88,7 @@ export default {
     padding: 0;
     margin: 0;
     position: fixed;
+    background: rgb(79, 89, 99);
     height: 100vh;
     width: 100%;
 }

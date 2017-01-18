@@ -95,4 +95,14 @@ export default {
 	font-weight: bold;
 	margin-top: 3px;
 }
+#document-container-header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+#doc-name {
+	font-size: 1.5em;
+	width:100%;
+    box-sizing:border-box;
+}
 </style>

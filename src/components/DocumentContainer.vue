@@ -1,7 +1,9 @@
 <template>
 	<div id="document-container">
-		<div id="toolbar"></div>
-		<div id="document"></div>
+		<div id="center-wrapper">
+			<div id="toolbar"></div>
+			<div id="document"></div>
+		</div>
 	</div>
 </template>
 
@@ -20,22 +22,20 @@ export default {
 </script>
 
 <style> 
-#document-container {
-	display: flex;
-	flex-direction: column;
+#document-container{
+	height: 100vh;
 	flex-grow: 1;
-	align-content: center;
-	justify-content: center;
-	color: #e0e2e5;
-	background: rgb(79, 89, 99);
-	z-index: 998;
+	overflow-y: scroll;
+}
+#center-wrapper {
+	width: 50vw;
+	margin: auto;
 	margin-top: 60px;
-
 }
 #toolbar {
 	height: 60px;
-	width: 50vw;
 	background: white;
+	color: black;
 	margin-bottom: 10px;
 }
 #document {
