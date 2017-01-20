@@ -1,17 +1,19 @@
 <template>
 	<div id="statusbar">
-		<img class="status-button" @click="changeSideBarState" src="../assets/logo.png" alt="logo" height="16" width="16">
-		<img class="status-button" @click="changeListBarState" src="../assets/plus.png" height="16" width="16" alt="New">
+		<img class="status-button" @click="toggleBar1()" src="../assets/logo.png" alt="logo" height="16" width="16">
+		<img class="status-button" @click="toggleBar2()" src="../assets/plus.png" height="16" width="16" alt="New">
 	</div>
 </template>
 
 <script>
+import { mapMutations } from "vuex"
+
 export default {
-	props: {
-		showingBar1: Boolean,
-		showingBar2: Boolean,
-		changeSideBarState: Function,
-		changeListBarState: Function
+	methods: {
+		...mapMutations([
+			"toggleBar1",
+			"toggleBar2"
+		])
 	}
 }
 </script>

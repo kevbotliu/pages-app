@@ -1,10 +1,10 @@
 <template>
 	<div id="navbar">
 		<div id="account-header">
-			<img class="nav-button" @click="changeAccountModalState" src="../assets/logo.png" alt="logo" height="18" width="18">
+			<img class="nav-button" @click="toggleAccountModal()" src="../assets/logo.png" alt="logo" height="18" width="18">
 			<div class="account-name">
-				<p class="small" v-if="timeOfDay()<12">Good morning</p>
-				<p class="small" v-else-if="timeOfDay()<18">Good afternoon</p>
+				<p class="small" v-if="timeOfDay<12">Good morning</p>
+				<p class="small" v-else-if="timeOfDay<18">Good afternoon</p>
 				<p class="small" v-else>Good evening</p>
 				{{ accountName }}
 			</div>
@@ -23,12 +23,23 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex"
+import { mapMutations } from "vuex"
+
 export default {
-	props: {
-		accountName: String,
-		timeOfDay: Function,
-		changeAccountModalState: Function
-	}	
+	methods: {
+		...mapMutations([
+			"toggleAccountModal",
+		])
+	},
+	computed: {
+		...mapGetters([
+			"accountName",
+			"timeOfDay",
+
+		])
+
+	}
 }
 </script>
 

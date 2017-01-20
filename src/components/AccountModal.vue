@@ -1,6 +1,6 @@
 <template>
 	<transition name="fade-over">
-		<div id="account-modal-wrapper" @click="wrapperClick">
+		<div id="account-modal-wrapper" @click.self="toggleAccountModal">
 			<div id="account-modal">
 				<form id="login-container">
 					<h1>login</h1>
@@ -21,12 +21,9 @@
 import User from "./User.vue"
 
 export default {
-	props: {
-		changeAccountModalState: Function
-	},
 	methods: {
-		wrapperClick(e) {
-			if(e.target.id == "account-modal-wrapper") this.changeAccountModalState();
+		toggleAccountModal() {
+			return this.$store.commit("toggleAccountModal");
 		}
 	},
 	components: {
