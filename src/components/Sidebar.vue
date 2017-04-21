@@ -1,10 +1,8 @@
 <template>
 
 	<div id="sidebar">
-		<div id="share-wrapper">
-			Share this document
-			<input>
-		</div>
+		<div id="share-wrapper">Share this document</div>
+		<input id="input">
 	</div>
 
 </template>
@@ -36,6 +34,10 @@ export default {
 #share-wrapper {
 	display: flex;
 	flex-direction: column;
+	padding: 5px;
+}
+#input {
+	padding:  2px;
 }
 
 
