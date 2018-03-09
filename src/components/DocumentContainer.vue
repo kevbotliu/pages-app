@@ -20,7 +20,8 @@ export default {
 			selector:'textarea',
 			statusbar: false,
 			toolbar: false,
-			menubar: false
+			menubar: false,
+			content_style: "div {margin: 10px; font-size: 24; border: 5px solid red; padding: 3px}"
 		});
 	},
 	computed: {
@@ -43,7 +44,7 @@ export default {
 }
 #document {
 	color: black;
-	font-size: 14;
+	font-size: 24;
 	font-family: "Open Sans";
 	padding: 50px;
 	min-height: 100vh;

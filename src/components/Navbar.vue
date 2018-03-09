@@ -83,7 +83,6 @@ export default {
 }
 .account-name {
 	font-size: 1.2em;
-	font-weight: bold;
 	text-transform: uppercase;
 	font-family: 'Slabo 27px', serif;
 	margin-top: 3px;
@@ -103,7 +102,6 @@ export default {
 	font-size: 1.2em;
 	font-family: "Slabo 27px", serif;
 	text-transform: uppercase;
-	font-weight: bold;
 	margin-top: 3px;
 }
 #document-container-header {
